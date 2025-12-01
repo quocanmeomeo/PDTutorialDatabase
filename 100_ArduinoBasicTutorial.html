@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with Arduino</title>
+    
+    <!-- Import Google Fonts (Roboto is similar to Carlito) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Import FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- General Page Styles --- */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333333; 
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            /* UPDATED: New Background Color */
+            background-color: #ceedf6; 
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Slightly deeper shadow for better contrast */
+            border-radius: 8px;
+        }
+
+        /* --- Header Styling --- */
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.2em;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .divider {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 20px 0;
+        }
+
+        /* --- Metadata Box --- */
+        .metadata-box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            text-align: center;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            font-size: 0.95em;
+        }
+
+        .meta-label {
+            /* UPDATED: New Deep Blue Text */
+            color: #00196e; 
+            font-weight: bold;
+        }
+
+        /* --- Section Headers --- */
+        h2 {
+            /* UPDATED: New Deep Blue Text */
+            color: #00196e;
+            font-size: 2em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+
+        /* --- Lists --- */
+        ul, ol {
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* --- Info/Warning Box --- */
+        .info-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            border-left: 5px solid #ffa000;
+            color: #856404;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .info-box i {
+            font-size: 1.5em;
+            color: #ffa000;
+        }
+
+        /* --- Code Block Styling --- */
+        .code-container {
+            background-color: #F7F7F7;
+            border: 1px solid #e1e1e1;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .code-header {
+            background-color: #eee;
+            padding: 8px 15px;
+            font-weight: bold;
+            font-size: 0.9em;
+            border-bottom: 1px solid #ddd;
+            color: #555;
+        }
+
+        .code-content {
+            padding: 15px;
+            overflow-x: auto;
+            white-space: pre;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        /* Arduino Syntax Highlighting Colors (Standard Arduino Colors) */
+        .kw-teal { color: #00979C; font-weight: bold; }   
+        .kw-orange { color: #D35400; font-weight: bold; } 
+        .kw-blue { color: #005C5F; }                      
+        .comment { color: #888888; font-style: italic; }  
+        .linenum { color: #ccc; margin-right: 15px; user-select: none; }
+
+        /* --- Links --- */
+        a {
+            /* UPDATED: New Deep Blue Text */
+            color: #00196e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                margin: 0;
+                border-radius: 0;
+            }
+            h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Title Section -->
+        <h1>Getting Started with Arduino</h1>
+        <p class="subtitle">Learn to blink an LED in 5 minutes</p>
+
+        <!-- Metadata Section -->
+        <div class="metadata-box">
+            <span class="meta-label">Category:</span> A, B, C &nbsp;|&nbsp; 
+            <span class="meta-label">Level:</span> 100 - Introductory
+        </div>
+
+        <hr class="divider">
+
+        <p><strong>New to Arduino?</strong> You're in the right place. This guide contains all the information you need to get your first program working.</p>
+
+        <!-- Introduction -->
+        <h2>Introduction</h2>
+        <p>Arduino is an open-source electronics platform based on easy-to-use hardware and software. It is intended for anyone making interactive projects.</p>
+
+        <!-- Prerequisites -->
+        <h2>Prerequisites</h2>
+        <p>Before proceeding, make sure you have the following parts:</p>
+        <ul>
+            <!-- Updated Icons to Deep Blue -->
+            <li><i class="fas fa-check-circle" style="color:#00196e"></i> <strong>Arduino Uno Board</strong> (or compatible)</li>
+            <li><i class="fas fa-check-circle" style="color:#00196e"></i> <strong>USB Cable</strong> (Type A to Type B)</li>
+            <li><i class="fas fa-check-circle" style="color:#00196e"></i> <strong>Computer</strong> (Windows, Mac, or Linux)</li>
+        </ul>
+
+        <!-- Installation -->
+        <h2>Installing the Arduino IDE</h2>
+        <p>To program the board, you need the official software (IDE).</p>
+        <ol>
+            <li><strong>Download:</strong> Go to the official website: <a href="https://www.arduino.cc/en/software" target="_blank">arduino.cc/en/software</a></li>
+            <li><strong>Select Version:</strong> Choose the version compatible with your operating system (Windows, Mac OS, or Linux).</li>
+            <li><strong>Install:</strong> Run the installer and follow the on-screen instructions.</li>
+            <li><strong>Launch:</strong> Open the application named "Arduino IDE".</li>
+        </ol>
+
+        <!-- Info Box -->
+        <div class="info-box">
+            <i class="fas fa-exclamation-triangle"></i>
+            <div>
+                <strong>Tip:</strong> We recommend downloading the latest version (IDE 2.x) as it includes features like auto-complete, which makes coding easier.
+            </div>
+        </div>
+
+        <!-- The Code -->
+        <h2>The Code: "Blink"</h2>
+        <p>In the Arduino world, programs are called "Sketches". We will write a simple sketch to blink the built-in LED.</p>
+        <p>Every Arduino program has two main parts:</p>
+        <ul>
+            <li><code>void setup()</code>: Runs once to set things up.</li>
+            <li><code>void loop()</code>: Runs forever in a loop.</li>
+        </ul>
+
+        <p>Copy the following code into your IDE:</p>
+
+        <!-- Code Block -->
+        <div class="code-container">
+            <div class="code-header">Arduino Blink Sketch</div>
+            <div class="code-content">
+<span class="linenum">1</span><span class="kw-teal">void</span> <span class="kw-orange">setup</span>() {
+<span class="linenum">2</span>  <span class="comment">// Initialize the LED pin as an output</span>
+<span class="linenum">3</span>  <span class="kw-orange">pinMode</span>(<span class="kw-blue">LED_BUILTIN</span>, <span class="kw-blue">OUTPUT</span>);
+<span class="linenum">4</span>}
+<span class="linenum">5</span>
+<span class="linenum">6</span><span class="kw-teal">void</span> <span class="kw-orange">loop</span>() {
+<span class="linenum">7</span>  <span class="kw-orange">digitalWrite</span>(<span class="kw-blue">LED_BUILTIN</span>, <span class="kw-blue">HIGH</span>);  <span class="comment">// Turn LED on</span>
+<span class="linenum">8</span>  <span class="kw-orange">delay</span>(1000);                      <span class="comment">// Wait 1 second</span>
+<span class="linenum">9</span>  <span class="kw-orange">digitalWrite</span>(<span class="kw-blue">LED_BUILTIN</span>, <span class="kw-blue">LOW</span>);   <span class="comment">// Turn LED off</span>
+<span class="linenum">10</span> <span class="kw-orange">delay</span>(1000);                      <span class="comment">// Wait 1 second</span>
+<span class="linenum">11</span>}</div>
+        </div>
+
+        <!-- Uploading -->
+        <h2>Uploading the Code</h2>
+        <p>Once your code is written, it's time to upload.</p>
+        <ol>
+            <li>Connect your Arduino to your PC via USB.</li>
+            <li>Go to <strong>Tools &rarr; Board &rarr; Arduino Uno</strong>.</li>
+            <li>Go to <strong>Tools &rarr; Port</strong> and select your COM port.</li>
+            <li>Click the <strong>Upload Button</strong> (<i class="fas fa-arrow-right"></i>) in the top left corner.</li>
+        </ol>
+
+        <p>If successful, you will see the text "Done uploading" at the bottom of the window, and your board will start blinking!</p>
+
+        <!-- Wrapping Up -->
+        <h2>Wrapping Up</h2>
+        <p>Congratulations! You have successfully programmed your first microcontroller.</p>
+        
+        <p><strong>Where to go next?</strong></p>
+        <ul>
+            <li><a href="https://www.arduino.cc" target="_blank">Official Arduino Reference</a></li>
+            <li><a href="https://randomnerdtutorials.com" target="_blank">Random Nerd Tutorials Projects</a></li>
+        </ul>
+
+    </div>
+
+</body>
+</html>
