@@ -1,0 +1,22 @@
+<div class="container">
+        <!-- Title Section -->
+        <h1>3D Print tutorial</h1>
+        <p class="subtitle">From Digital Design to physical model</p>
+
+        <!-- Metadata Section -->
+        <div class="metadata-box">
+            <span class="meta-label">Category:</span> Fabrication, Mechanical &nbsp;|&nbsp; 
+            <span class="meta-label">Level:</span> 100 - Introductory
+        </div>
+
+        <hr class="divider">
+
+        <p><strong>Got 3D design ?</strong> Before you can print, you need to turn your 3D model into instructions the machine understands. This guide walks you through using <strong>PrusaSlicer</strong> to prepare your first print.</p>
+
+        <!-- Prerequisites -->
+        <h2>Prerequisites</h2>
+        <ul>
+            <li><i class="fas fa-check-circle" style="color:#00196e"></i> Install <a href="https://www.prusa3d.com/page/prusaslicer_424/" target="_blank"><strong>PrusaSlicer Software</strong></a> on your computer.</li>
+            
+            <li><i class="fas fa-check-circle" style="color:#00196e"></i> A <strong>3D Model File</strong> (STL, STEP, 3MF, or OBJ).</li>
+        </ul>

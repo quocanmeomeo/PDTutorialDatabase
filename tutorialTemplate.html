@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 1. CHANGE THE BROWSER TAB TITLE HERE -->
+    <title>Tutorial Template</title>
+    
+    <!-- Import Google Fonts (Roboto) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Import FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- DO NOT EDIT THE CSS UNLESS YOU WANT TO CHANGE THE THEME --- */
+        
+        /* General Page Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333333; 
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #ceedf6; /* Theme Background */
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        /* Header Styling */
+        h1 { color: #333; text-align: center; margin-bottom: 5px; font-size: 2.5em; }
+        .subtitle { text-align: center; color: #666; font-size: 1.2em; margin-top: 0; margin-bottom: 20px; }
+        .divider { border: 0; height: 1px; background: #ddd; margin: 20px 0; }
+
+        /* Metadata Box */
+        .metadata-box {
+            background-color: #f9f9f9; padding: 15px; text-align: center;
+            border-radius: 4px; margin-bottom: 30px; font-size: 0.95em; border: 1px solid #eee;
+        }
+        .meta-label { color: #00196e; font-weight: bold; }
+
+        /* Section Headers */
+        h2 {
+            color: #00196e; font-size: 1.8em; margin-top: 40px; margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0; padding-bottom: 10px;
+        }
+        h3 { color: #333; margin-top: 25px; border-left: 4px solid #00196e; padding-left: 10px; }
+
+        /* Lists */
+        ul, ol { margin-bottom: 20px; }
+        li { margin-bottom: 10px; }
+
+        /* Tables (Wiring) */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #00196e; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+
+        /* Special Boxes */
+        .box { padding: 15px; margin: 20px 0; border-radius: 4px; display: flex; align-items: flex-start; gap: 15px; }
+        .box i { font-size: 1.4em; margin-top: 3px; }
+        
+        /* Info Box (Yellow) */
+        .box-info { background-color: #fff3cd; border: 1px solid #ffeeba; border-left: 5px solid #ffa000; color: #856404; }
+        .box-info i { color: #ffa000; }
+
+        /* Warning Box (Red) */
+        .box-warning { background-color: #ffebee; border: 1px solid #ffcdd2; border-left: 5px solid #d32f2f; color: #b71c1c; }
+        .box-warning i { color: #d32f2f; }
+
+        /* Tip Box (Blue) */
+        .box-tip { background-color: #e3f2fd; border: 1px solid #bbdefb; border-left: 5px solid #00196e; color: #0d47a1; }
+        .box-tip i { color: #00196e; }
+
+        /* Code Block Styling */
+        .code-container {
+            background-color: #F7F7F7; border: 1px solid #e1e1e1; border-radius: 5px;
+            margin: 20px 0; overflow: hidden; font-family: 'Courier New', Courier, monospace;
+        }
+        .code-header {
+            background-color: #eee; padding: 8px 15px; font-weight: bold; font-size: 0.9em;
+            border-bottom: 1px solid #ddd; color: #555; display: flex; justify-content: space-between;
+        }
+        .code-content { padding: 15px; overflow-x: auto; white-space: pre; font-size: 0.9em; line-height: 1.5; }
+
+        /* Code Syntax Highlighting Classes */
+        .kw-teal { color: #00979C; font-weight: bold; }   /* Types, #include */
+        .kw-orange { color: #D35400; font-weight: bold; } /* Functions */
+        .kw-blue { color: #005C5F; }                      /* Constants */
+        .comment { color: #888888; font-style: italic; }  /* Comments */
+        .string { color: #005C5F; }                       /* "Strings" */
+        .linenum { color: #ccc; margin-right: 15px; user-select: none; }
+        .preproc { color: #5e6d03; }                      /* #define */
+        .key { background-color: #fff; border: 1px solid #ccc; border-radius: 3px; padding: 2px 6px; font-weight: bold; color: #333; box-shadow: 0 1px 0 #ccc; font-family: sans-serif; font-size: 0.9em;}
+
+        /* Links */
+        a { color: #00196e; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 20px; margin: 0; border-radius: 0; }
+            h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- ================= HEADER SECTION ================= -->
+        <h1>[Insert Tutorial Title Here]</h1>
+        <p class="subtitle">[Insert Short Subtitle Here]</p>
+
+        <!-- Metadata -->
+        <div class="metadata-box">
+            <span class="meta-label">Category:</span> [Category A, Category B] &nbsp;|&nbsp; 
+            <span class="meta-label">Level:</span> [100 - Introductory]
+        </div>
+
+        <hr class="divider">
+
+        <!-- Intro Text -->
+        <p><strong>[Bold Hook Question?]</strong> [Introductory text goes here. Explain what the project is and why it is useful.]</p>
+
+        <!-- ================= PREREQUISITES SECTION ================= -->
+        <h2>Prerequisites</h2>
+        <p>You will need the following:</p>
+        <ul>
+            <!-- Copy and paste this <li> line for more items -->
+            <li><i class="fas fa-check-circle" style="color:#00196e"></i> <strong>Item Name</strong> (Description)</li>
+            <li><i class="fas fa-check-circle" style="color:#00196e"></i> <strong>Item Name</strong> (Description)</li>
+        </ul>
+
+        <!-- ================= MAIN CONTENT SECTION ================= -->
+        <h2>Step 1: [Step Title]</h2>
+        <p>[Explanation of the step...]</p>
+
+        <!-- Example of a Table -->
+        <h3>Wiring Diagram</h3>
+        <table>
+            <tr>
+                <th>Component Pin</th>
+                <th>Microcontroller Pin</th>
+                <th>Function</th>
+            </tr>
+            <tr><td>VCC</td><td>5V / 3.3V</td><td>Power</td></tr>
+            <tr><td>GND</td><td>GND</td><td>Ground</td></tr>
+            <tr><td>DATA</td><td>Pin 2</td><td>Signal</td></tr>
+        </table>
+
+        <!-- Example of an INFO BOX (Yellow) -->
+        <div class="box box-info">
+            <i class="fas fa-info-circle"></i>
+            <div>
+                <strong>Note:</strong> [Insert helpful information here].
+            </div>
+        </div>
+
+        <!-- Example of a WARNING BOX (Red) -->
+        <div class="box box-warning">
+            <i class="fas fa-bolt"></i>
+            <div>
+                <strong>Warning:</strong> [Insert warning here, e.g., Do not connect 5V to ESP32].
+            </div>
+        </div>
+
+        <!-- Example of a TIP BOX (Blue) -->
+        <div class="box box-tip">
+            <i class="fas fa-lightbulb"></i>
+            <div>
+                <strong>Pro Tip:</strong> [Insert advanced tip here].
+            </div>
+        </div>
+
+        <!-- ================= CODE SECTION ================= -->
+        <h2>The Code</h2>
+        <p>Copy the following code into your IDE:</p>
+
+        <div class="code-container">
+            <div class="code-header"><span>[Filename.ino]</span> <span>C++</span></div>
+            <div class="code-content">
+<span class="linenum">1</span><span class="kw-teal">void</span> <span class="kw-orange">setup</span>() {
+<span class="linenum">2</span>  <span class="comment">// Put setup code here</span>
+<span class="linenum">3</span>  Serial.<span class="kw-orange">begin</span>(9600);
+<span class="linenum">4</span>}
+<span class="linenum">5</span>
+<span class="linenum">6</span><span class="kw-teal">void</span> <span class="kw-orange">loop</span>() {
+<span class="linenum">7</span>  <span class="comment">// Put main code here</span>
+<span class="linenum">8</span>}</div>
+        </div>
+
+        <!-- ================= WRAPPING UP SECTION ================= -->
+        <h2>Wrapping Up</h2>
+        <p>Conclusion text goes here. Explain what to do next or how to expand the project.</p>
+        
+        <ul>
+            <li><a href="#" target="_blank">Link to Datasheet</a></li>
+            <li><a href="#" target="_blank">Link to Related Tutorial</a></li>
+        </ul>
+
+    </div>
+
+<!-- ================================================================= -->
+<!--                       TEAM CHEAT SHEET                            -->
+<!--           (Delete this section before publishing)                 -->
+<!-- ================================================================= -->
+<!-- 
+    1. SYTAX HIGHLIGHTING CLASSES:
+       - <span class="kw-teal">     -> For types (void, int) & includes
+       - <span class="kw-orange">   -> For functions (setup, loop, digitalWrite)
+       - <span class="kw-blue">     -> For constants (HIGH, LOW, INPUT)
+       - <span class="string">      -> For text in quotes ("Hello")
+       - <span class="comment">     -> For // comments
+       - <span class="preproc">     -> For #define
+
+    2. BOX CLASSES (div class="box ..."):
+       - box-info      -> Yellow (General Info)
+       - box-warning   -> Red (Danger/Voltage)
+       - box-tip       -> Blue (Tips/Tricks)
+
+    3. KEYBOARD SHORTCUT STYLE:
+       - <span class="key">CTRL</span>
+-->
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prusa Guide: From Slicer to Print</title>
+    
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Import FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- General Page Styles --- */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333333; 
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #ceedf6; /* Light Blue Background */
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        /* --- Header Styling --- */
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.2em;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .divider {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 20px 0;
+        }
+
+        /* --- Metadata Box --- */
+        .metadata-box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            text-align: center;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            font-size: 0.95em;
+            border: 1px solid #eee;
+        }
+
+        .meta-label {
+            color: #00196e; /* Deep Navy Blue */
+            font-weight: bold;
+        }
+
+        /* --- Section Headers --- */
+        h2 {
+            color: #00196e; /* Deep Navy Blue */
+            font-size: 1.8em;
+            margin-top: 50px; /* Increased spacing for better flow */
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 25px;
+            border-left: 4px solid #00196e;
+            padding-left: 10px;
+        }
+
+        /* --- Lists --- */
+        ul, ol {
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* --- Info/Warning/Tip Boxes --- */
+        .info-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            border-left: 5px solid #ffa000;
+            color: #856404;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .warning-box {
+            background-color: #ffebee;
+            border: 1px solid #ffcdd2;
+            border-left: 5px solid #d32f2f;
+            color: #b71c1c;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .tip-box {
+            background-color: #e3f2fd;
+            border: 1px solid #bbdefb;
+            border-left: 5px solid #00196e;
+            color: #0d47a1;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .info-box i, .warning-box i, .tip-box i {
+            font-size: 1.4em;
+            margin-top: 3px;
+        }
+
+        /* --- Shortcut Block Styling --- */
+        .shortcut-container {
+            background-color: #F7F7F7;
+            border: 1px solid #e1e1e1;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .shortcut-header {
+            background-color: #eee;
+            padding: 8px 15px;
+            font-weight: bold;
+            font-size: 0.9em;
+            border-bottom: 1px solid #ddd;
+            color: #555;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .shortcut-content {
+            padding: 15px;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .key {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 2px 6px;
+            font-weight: bold;
+            color: #333;
+            box-shadow: 0 1px 0 #ccc;
+        }
+
+        /* --- Links --- */
+        a {
+            color: #00196e; 
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                margin: 0;
+                border-radius: 0;
+            }
+            h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+   <div class="container">
+        <!-- Title Section -->
+        <h1>3D Print tutorial</h1>
+        <p class="subtitle">From Digital Design to physical model</p>
+
+        <!-- Metadata Section -->
+        <div class="metadata-box">
+            <span class="meta-label">Category:</span> Fabrication, Mechanical &nbsp;|&nbsp; 
+            <span class="meta-label">Level:</span> 100 - Introductory
+        </div>
+
+        <hr class="divider">
+
+        <p><strong>Got 3D design ?</strong> Before you can print, you need to turn your 3D model into instructions the machine understands. This guide walks you through using <strong>PrusaSlicer</strong> to prepare your first print.</p>
+
+        <!-- Prerequisites -->
+        <h2>Prerequisites</h2>
+        <ul>
+            <li><i class="fas fa-check-circle" style="color:#00196e"></i> Install <a href="https://www.prusa3d.com/page/prusaslicer_424/" target="_blank"><strong>PrusaSlicer Software</strong></a> on your computer.</li>
+            
+            <li><i class="fas fa-check-circle" style="color:#00196e"></i> A <strong>3D Model File</strong> (STL, STEP, 3MF, or OBJ).</li>
+        </ul>
+
+        <!-- PART 1: SOFTWARE -->
+        <div style="background: #00196e; color: white; padding: 10px; margin-top: 40px; border-radius: 4px;">
+            <h3 style="color: white; margin: 0; border: none;">Part 1: The Software (PrusaSlicer)</h3>
+        </div>
+
+        <!-- Step 1 -->
+        <h2>Step 1: Importing & Orientation</h2>
+        <ol>
+            <li>Open PrusaSlicer.</li>
+            <li><strong>Drag and Drop</strong> your STL/3MF file into the window.</li>
+            <li><strong>Orient the Model:</strong> Ideally, the largest flat surface should be on the bed.
+                <ul>
+                    <li>Press <span class="key">F</span> (Place on Face) and click a white plane on your model to snap it flat.</li>
+                    <li>Press <span class="key">R</span> to rotate manually if needed.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <!-- Step 2 -->
+        <h2>Step 2: Settings & Slicing</h2>
+        <p>Check the Right Panel settings:</p>
+        <ul>
+            <li><strong>Printer:</strong> Select "Original Prusa i3 MK3S & MK3S+".</li>
+            <li><strong>Filament:</strong> "Prusament PLA" (or Generic PLA).</li>
+            <li><strong>Print Settings:</strong> "0.20mm QUALITY" is the best starting point.</li>
+            <li><strong>Infill:</strong> Set to 20%.</li>
+            <li><strong>Supports:</strong> Select "None" unless your model has steep overhangs.</li>
+        </ul>
+
+        <p>Click <strong>Slice Now</strong> in the bottom right corner. Check the preview, then click <strong>Export G-code</strong> to save it to your SD Card.</p>
+
+        <!-- PART 2: HARDWARE -->
+        <div style="background: #00196e; color: white; padding: 10px; margin-top: 60px; border-radius: 4px;">
+            <h3 style="color: white; margin: 0; border: none;">Part 2: The Hardware (Printing)</h3>
+        </div>
+
+        <!-- Step 3 -->
+        <h2>Step 3: Preparing the Print Bed</h2>
+        <p>The most common cause of print failure is a dirty surface. Fingerprints contain grease which prevents plastic from sticking.</p>
+        <ol>
+            <li>Ensure the magnetic steel sheet is on the bed.</li>
+            <li>Pour a small amount of <strong>Isopropyl Alcohol (IPA)</strong> onto a paper towel.</li>
+            <li>Wipe the bed thoroughly while it is cold.</li>
+        </ol>
+
+        <div class="warning-box">
+            <i class="fas fa-exclamation-triangle"></i>
+            <div>
+                <strong>Warning:</strong> Never clean the Textured PEI Powder-coated sheet with Acetone. Use only IPA (Alcohol).
+            </div>
+        </div>
+
+        <!-- Step 4 -->
+        <h2>Step 4: Loading Filament</h2>
+        <ol>
+            <li>Press the control knob to open the Menu.</li>
+            <li>Select <strong>Preheat</strong> &rarr; <strong>PLA</strong>. The printer will heat up (approx 215&deg;C / 60&deg;C).</li>
+            <li>Wait for the temperature to stabilize.</li>
+            <li>Take your filament roll and cut the tip at a <strong>45-degree angle</strong> (sharp tip).</li>
+            <li>Place the roll on the top holder.</li>
+            <li>Insert the tip into the top of the extruder (the hole with the PTFE tube).</li>
+            <li>Go to Menu &rarr; <strong>Load Filament</strong> (or Autoload will trigger).</li>
+            <li>The printer will ask: <em>"Filament extruding with correct color?"</em> If you see plastic coming out of the nozzle, select <strong>YES</strong>.</li>
+        </ol>
+
+        <!-- Step 5 -->
+        <h2>Step 5: Starting the Print</h2>
+        <ol>
+            <li>Insert the SD card containing your G-code.</li>
+            <li>Press the knob and select <strong>Print from SD</strong>.</li>
+            <li>Scroll to find your file (e.g., <code>my_model_0.2mm_PLA_MK3S_2h.gcode</code>).</li>
+            <li>Press the knob to confirm.</li>
+        </ol>
+        <p>The printer will perform "Mesh Bed Leveling" (probing 9 points on the bed) and then start printing.</p>
+
+        <!-- Step 6 -->
+        <h2>Step 6: The First Layer (Critical!)</h2>
+        <p>Do not walk away! Watch the first layer. The nozzle will draw a "skirt" (outline) and then the object.</p>
+        
+        <div class="tip-box">
+            <i class="fas fa-tools"></i>
+            <div>
+                <strong>Live Adjust Z:</strong> If the plastic is not sticking or looks like loose spaghetti, long-press the knob to enter <strong>Live Adjust Z</strong>.
+                <ul>
+                    <li><strong>Turn Counter-Clockwise (Negative):</strong> Lowers the nozzle (More squish).</li>
+                    <li><strong>Turn Clockwise (Positive):</strong> Raises the nozzle.</li>
+                </ul>
+                Goal: The line should be slightly flattened, not round.
+            </div>
+        </div>
+
+        <!-- Step 7 -->
+        <h2>Step 7: Removing the Print</h2>
+        <p>Once the print is finished:</p>
+        <ol>
+            <li><strong>Wait!</strong> Let the bed cool down below 40&deg;C.</li>
+            <li>Remove the magnetic steel sheet from the printer.</li>
+            <li><strong>Flex the sheet</strong> inward with both hands. The print should pop off effortlessly.</li>
+        </ol>
+
+        <div class="warning-box">
+            <i class="fas fa-hand-paper"></i>
+            <div>
+                <strong>Caution:</strong> Never use a metal spatula or knife on the PEI sheet. You will scratch the coating permanently.
+            </div>
+        </div>
+
+        <h2>Wrapping Up</h2>
+        <p>Congratulations on your first print! Remember to always keep your print sheet clean and store your filament in a dry place when not in use.</p>
+
+    </div>
+
+</body>
+</html>
