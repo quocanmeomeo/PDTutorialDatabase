@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Report Template</title>
+    
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Import FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- General Page Styles --- */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333333; 
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #ceedf6; /* Light Blue Background */
+        }
+
+        .container {
+            max-width: 950px; /* Slightly wider for report format */
+            margin: 40px auto;
+            background: white;
+            padding: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        /* --- Header Styling --- */
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.2em;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .divider {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 20px 0;
+        }
+
+        /* --- Metadata Box --- */
+        .metadata-box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            text-align: center;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            font-size: 0.95em;
+            border: 1px solid #eee;
+        }
+
+        .meta-label {
+            color: #00196e; /* Deep Navy Blue */
+            font-weight: bold;
+        }
+
+        /* --- Section Headers --- */
+        h2 {
+            color: #00196e; /* Deep Navy Blue */
+            font-size: 1.8em;
+            margin-top: 50px; 
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 30px;
+            border-left: 5px solid #00196e;
+            padding-left: 15px;
+            font-size: 1.3em;
+        }
+
+        /* --- Lists --- */
+        ul, ol {
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* --- Tables --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #00196e;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* --- Info/Warning/Tip Boxes --- */
+        .info-box, .tip-box, .warning-box {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        /* Info (Yellow) */
+        .info-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            border-left: 5px solid #ffa000;
+            color: #856404;
+        }
+
+        /* Tip (Blue) */
+        .tip-box {
+            background-color: #e3f2fd;
+            border: 1px solid #bbdefb;
+            border-left: 5px solid #00196e;
+            color: #0d47a1;
+        }
+
+        /* Warning/Limitation (Red) */
+        .warning-box {
+            background-color: #ffebee;
+            border: 1px solid #ffcdd2;
+            border-left: 5px solid #d32f2f;
+            color: #b71c1c;
+        }
+
+        .info-box i, .warning-box i, .tip-box i {
+            font-size: 1.4em;
+            margin-top: 3px;
+        }
+
+        /* --- Code Block Styling --- */
+        .code-container {
+            background-color: #F7F7F7;
+            border: 1px solid #e1e1e1;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .code-header {
+            background-color: #eee;
+            padding: 8px 15px;
+            font-weight: bold;
+            font-size: 0.9em;
+            border-bottom: 1px solid #ddd;
+            color: #555;
+        }
+        .code-content {
+            padding: 15px;
+            overflow-x: auto;
+            white-space: pre;
+            font-size: 0.9em;
+        }
+        .kw-teal { color: #00979C; font-weight: bold; }   
+        .kw-orange { color: #D35400; font-weight: bold; } 
+        .kw-blue { color: #005C5F; }                      
+
+        /* --- Image Placeholder --- */
+        .image-placeholder {
+            width: 100%;
+            height: 250px;
+            background-color: #eee;
+            border: 2px dashed #aaa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        /* --- Links --- */
+        a { color: #00196e; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+
+        /* --- Responsive --- */
+        @media (max-width: 600px) {
+            .container { padding: 20px; margin: 0; border-radius: 0; }
+            h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Report Header -->
+        <h1>[Insert Project Name]</h1>
+        <p class="subtitle">Final Project Report</p>
+
+        <!-- Metadata Section -->
+        <div class="metadata-box">
+            <span class="meta-label">Team Members:</span> Member A, Member B, Member C &nbsp;|&nbsp; 
+            <span class="meta-label">Date:</span> December 8, 2025<br>
+            <span class="meta-label">Course:</span> [Insert Course Name] &nbsp;|&nbsp; 
+            <span class="meta-label">Instructor:</span> [Insert Name]
+        </div>
+
+        <hr class="divider">
+
+        <!-- Abstract -->
+        <h2>Abstract</h2>
+        <p><em>[Write a short summary (100-150 words) describing the problem, your solution, and the final result. Example: "This project aims to automate a home garden using an ESP32..."]</em></p>
+
+        <!-- PHASE 1: Design Thinking -->
+        <h2>1. Design Thinking Process</h2>
+        <p>We approached this project using the 5-stage Design Thinking methodology.</p>
+
+        <h3>1.1 Empathize</h3>
+        <p><em>[Describe who your user is and what their pain points are.]</em></p>
+        <div class="tip-box">
+            <i class="fas fa-users"></i>
+            <div>
+                <strong>User Insight:</strong> We interviewed 5 gardeners and found their biggest issue was forgetting to water plants during vacations.
+            </div>
+        </div>
+
+        <h3>1.2 Define</h3>
+        <p><strong>Problem Statement:</strong> <em>[Insert Problem Statement here. Example: "Homeowners need a way to remotely monitor soil moisture to prevent plant death during travel."]</em></p>
+
+        <h3>1.3 Ideate</h3>
+        <p>We brainstormed several solutions:</p>
+        <ul>
+            <li>Idea A: A timed drip system (Discarded: Too messy).</li>
+            <li>Idea B: A Bluetooth sensor (Discarded: Short range).</li>
+            <li><strong>Idea C (Selected):</strong> An IoT Wi-Fi system using ESP32 and Blynk.</li>
+        </ul>
+
+        <h3>1.4 Prototype</h3>
+        <p><em>[Describe your early sketches or CAD models.]</em></p>
+        <div class="image-placeholder">
+            [Insert Photo of CAD Model or Early Wiring Sketch]
+        </div>
+
+        <h3>1.5 Test</h3>
+        <p><em>[What happened when you tested the prototype? What failed? Example: "The moisture sensor corroded after 2 days, so we switched to a capacitive sensor."]</em></p>
+
+        <!-- PHASE 2: Technical Report -->
+        <h2>2. Technical Implementation</h2>
+
+        <h3>2.1 System Architecture</h3>
+        <p>The system consists of three main nodes communicating via [Wi-Fi/LoRa/RS485].</p>
+        <div class="image-placeholder">
+            [Insert Block Diagram / Flowchart Here]
+        </div>
+
+        <h3>2.2 Bill of Materials (BOM)</h3>
+        <table>
+            <tr>
+                <th>Component</th>
+                <th>Specification</th>
+                <th>Quantity</th>
+                <th>Cost</th>
+            </tr>
+            <tr><td>ESP32 Dev Kit V1</td><td>Dual Core, Wi-Fi/BT</td><td>1</td><td>$6.00</td></tr>
+            <tr><td>DHT11</td><td>Temp/Humidity Sensor</td><td>1</td><td>$2.00</td></tr>
+            <tr><td>Relay Module</td><td>5V, 10A</td><td>1</td><td>$1.50</td></tr>
+            <tr><td><strong>Total</strong></td><td></td><td></td><td><strong>$9.50</strong></td></tr>
+        </table>
+
+        <h3>2.3 Circuit Diagram</h3>
+        <p>The wiring diagram below illustrates the connection between the MCU and sensors.</p>
+        <div class="image-placeholder">
+            [Insert Fritzing or Schematic Image Here]
+        </div>
+
+        <!-- PHASE 3: Special Technical Part -->
+        <h2>3. Special Technical Feature</h2>
+        <div class="info-box">
+            <i class="fas fa-star"></i>
+            <div>
+                <strong>Highlight:</strong> This section details the most creative or unique part of our project (e.g., custom gear system, weird way of powering, or a unique CAD design).
+                The main focus of this part is to embrace the out of the box thinking of Fulbright's student when facing a new field. 
+            </div>
+        </div>
+
+        <h3>[Insert Topic, e.g., "Custom GT2 Gear 40 Teeth for bell"]</h3>
+        <p>Unlike standard gear sell on the market, we implemented our own gear in fusion 360 to handle the specific radius need. And reduce the price.</p>
+
+        <div class="image-placeholder">
+            [Insert CAD or Image Here]
+        </div>
+        
+        We used the gear generator in Fusion add in to create 40 teeth grear, then scale it down to the scale of 0,48.
+
+        <!-- PHASE 4: Results -->
+        <h2>4. Results</h2>
+        <p>The system was successfully deployed and tested for [Time Period]. The data below shows the sensor readings over 24 hours.</p>
+        <div class="image-placeholder">
+            [Insert Graph/Chart of Results or Photo of Final Build]
+        </div>
+
+        <!-- PHASE 5: Limitations & Improvements -->
+        <h2>5. Limitations & Future Improvements</h2>
+
+        <h3>5.1 Limitations</h3>
+        <div class="warning-box">
+            <i class="fas fa-exclamation-triangle"></i>
+            <div>
+                <strong>Current Constraints:</strong>
+                <ul>
+                    <li><strong>Battery Life:</strong> The device currently lasts only 6 hours on a 2000mAh battery.</li>
+                    <li><strong>Connectivity:</strong> The system fails if Wi-Fi signal drops below -80dBm.</li>
+                    <li><strong>Enclosure:</strong> The 3D printed case is not waterproof.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>5.2 Future Improvements</h3>
+        <p>To make this product market-ready, we propose the following upgrades:</p>
+        <ol>
+            <li><strong>Deep Sleep Mode:</strong> Implementing ESP32 Deep Sleep could extend battery life to 3 months.</li>
+            <li><strong>PCB Design:</strong> Replacing the breadboard with a custom PCB to reduce size and loose wires.</li>
+            <li><strong>LoRa Integration:</strong> Using LoRa instead of Wi-Fi for long-range agricultural use.</li>
+        </ol>
+
+        <!-- Conclusion -->
+        <h2>Conclusion</h2>
+        <p>In conclusion, the [Project Name] successfully demonstrated the feasibility of [Core Concept]. While there are limitations regarding power consumption, the core functionality satisfies the user needs identified in the Design Thinking phase.</p>
+
+        <hr class="divider">
+        <p style="text-align: center; font-size: 0.9em; color: #888;">
+            Report generated via Template | &copy; 2025 [Your Team Name]
+        </p>
+
+    </div>
+
+</body>
+</html>
